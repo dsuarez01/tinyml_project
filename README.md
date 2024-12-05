@@ -19,8 +19,8 @@ python app.py \
 ```
 
 Arguments:
-    --model_path: Path to the pretrained model (e.g., ./models/open-llama-7B).
-    --dataset_path: Path to the dataset (e.g., ./datasets/wikitext-2).
-    --num_tune_steps: Number of fine-tuning steps (default: 500).
-    --batch_size: Batch size for training and evaluation (default: 16).
-    --output_path: Path to save the quantized model and parameters.
+- `--model_path`: Path to the pretrained model (e.g., ./models/open-llama-7B).
+- `--dataset_path`: Path to the dataset (e.g., ./datasets/wikitext-2).
+- `--num_tune_steps`: Number of fine-tuning steps (default: 500).
+- `--batch_size`: Batch size for training and evaluation (default: 16).
+- `--output_path`: Path to save the quantized model and parameters.
