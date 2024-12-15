@@ -11,7 +11,7 @@ We aim to understand how quantization of the activations affects quantization er
 
 A push-the-button script is included below for ease of use. Note that the SLURM environment uses a slightly different workflow (as shown in the demo).
 
-(Lab 4 of 6.5940 proved to be especially helpful and useful here. Special thanks to MIT SuperCloud and TinyML Course Staff for making this project a possibility.)
+(Lab 4 of 6.5940 proved to be especially helpful and useful here. Special thanks to MIT SuperCloud and the 6.5940 course staff for making this project a possibility.)
 
 ## Push-the-button script: 
 
