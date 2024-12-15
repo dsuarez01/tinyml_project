@@ -1,9 +1,15 @@
 # tinyml_project
 Repository for TinyML project (course # is 6.5940).
 
-We explore mixed-precision weight 4-bit, activation 4-bit quantization (W4A4) for LLM compression and acceleration. 
+We explore mixed-precision weight 4-bit, activation 4-bit quantization (W4A4) for LLM compression and acceleration.
 
-A push-the-button script is included below for ease of use. Note that the SLURM environment that I am currently developing this project in uses a slightly different workflow.
+Activation quantizations are performed dynamically, weight quantizations are done according to an importance ranking computed from activation magnitudes.
+
+The fraction of salient weights preserved is kept at a fixed default value of 0.01. As shown in Activation-aware Weight Quantization (AWQ) by Lin et al. (2023) [1], retaining 1% of the salient weights significantly reduces quantization error.
+
+We aim to understand how quantization of the activations affects quantization error. Here, the fraction of activation channels (corresponding to salient weights) that are preserved is varied across the range [0.1,0.2,...,0.9].
+
+A push-the-button script is included below for ease of use. Note that the SLURM environment uses a slightly different workflow (as shown in the demo).
 
 ## Push-the-button script: 
 
@@ -28,3 +34,7 @@ Arguments:
 ## Demo:
 
 ![Demo](./assets/tinyml_proj.gif)
+
+## References:
+
+[1] Lin, S., Wang, Y., Wang, X., Wang, Z., & Yang, H. (2023). AWQ: Activation-Aware Weight Quantization for LLMs. In H. Larochelle, G. Ranzato, R. Hadsell, M. F. Balcan, & H. Lin (Eds.), *Advances in Neural Information Processing Systems 36*.
