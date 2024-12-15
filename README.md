@@ -24,3 +24,7 @@ Arguments:
 - `--model_path`: Path to the pretrained model (e.g., `./models/opt-2.7b`). Model should be pre-downloaded.
 - `--eval_ds_path`: Path to the evaluation dataset (e.g., `./datasets/wikitext-2`). Dataset should be pre-downloaded.
 - `--calib_ds_path`: Path to the calibration dataset (e.g., `./datasets/pile-val-backup`). Dataset should also be pre-downloaded.
+
+## Demo:
+
+![Demo](./assets/tinyml_proj.gif)
