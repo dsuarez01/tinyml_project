@@ -5,7 +5,7 @@ We explore mixed-precision weight 4-bit, activation 4-bit quantization (W4A4) fo
 
 Activation quantizations are performed dynamically, weight quantizations are done according to an importance ranking computed from activation magnitudes.
 
-The fraction of salient weights preserved is kept at a fixed default value of 0.01. As shown in Activation-aware Weight Quantization (AWQ) by Lin et al. (2023) [1], retaining 1% of the salient weights significantly reduces quantization error.
+The fraction of salient weight channels preserved is kept at a fixed default value of 0.01. As shown in Activation-aware Weight Quantization (AWQ) by Lin et al. (2023) [1], retaining 1% of the salient weight channels at original precision significantly reduces quantization error.
 
 We aim to understand how quantization of the activations affects quantization error. Here, the fraction of activation channels (corresponding to salient weights) that are preserved is varied across the range [0.1,0.2,...,0.9].
 
@@ -27,7 +27,7 @@ python -u app.py \
 ```
 
 Arguments:
-- `--frac_salient_weights`: Fraction of salient weights to preserve during quantization (e.g., `0.01` for preserving 1% of weights).
+- `--frac_salient_weights`: Fraction of salient weight channels to preserve during quantization (e.g., `0.01` for preserving 1% of weights).
 - `--plot_name`: Name for the output plot (e.g., `opt-2.7b`). Plot saved in the `./plots/` directory.
 - `--model_path`: Path to the pretrained model (e.g., `./models/opt-2.7b`). Model should be pre-downloaded.
 - `--eval_ds_path`: Path to the evaluation dataset (e.g., `./datasets/wikitext-2`). Dataset should be pre-downloaded.
