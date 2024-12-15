@@ -11,6 +11,8 @@ We aim to understand how quantization of the activations affects quantization er
 
 A push-the-button script is included below for ease of use. Note that the SLURM environment uses a slightly different workflow (as shown in the demo).
 
+(Lab 4 of 6.5940 proved to be especially helpful and useful here.)
+
 ## Push-the-button script: 
 
 To use mixed-precision W4A4 quantization on the model, run the following command:
