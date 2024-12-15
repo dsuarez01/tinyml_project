@@ -1,8 +1,6 @@
-.env
 main_script.sh
-datasets/
-orig_models/
-quantized_models/
 slurm_err/
 slurm_out/
 src/__pycache__/
+models/
+datasets/

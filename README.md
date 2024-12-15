@@ -1,26 +1,26 @@
 # tinyml_project
 Repository for TinyML project (course # is 6.5940).
 
-We explore weight 4-bit, activation 4-bit quantization (W4A4) for LLM compression and acceleration. 
+We explore mixed-precision weight 4-bit, activation 4-bit quantization (W4A4) for LLM compression and acceleration. 
 
-A push-the-button script is in progress, as the SLURM environment that I am currently developing this project in uses a slightly different workflow.
+A push-the-button script is included below for ease of use. Note that the SLURM environment that I am currently developing this project in uses a slightly different workflow.
 
-## Push-the-button script [in progress]: 
+## Push-the-button script: 
 
-To use W4A4 quantization on the model, run the following command:
+To use mixed-precision W4A4 quantization on the model, run the following command:
 
 ```
-python app.py \
-    --model_path ./models/open-llama-7B \
-    --dataset_path ./datasets/wikitext-2 \
-    --num_tune_steps 500 \
-    --batch_size 16 \
-    --output_path ./quantized_results
+python -u app.py \
+    --frac_salient_weights <fraction of salient weights preserved> \
+    --plot_name <name of plot> \
+    --model_path <path to model> \
+    --eval_ds_path <path to eval. dataset> \
+    --calib_ds_path <path to calib dataset>
 ```
 
 Arguments:
-- `--model_path`: Path to the pretrained model (e.g., ./models/open-llama-7B).
-- `--dataset_path`: Path to the dataset (e.g., ./datasets/wikitext-2).
-- `--num_tune_steps`: Number of fine-tuning steps (default: 500).
-- `--batch_size`: Batch size for training and evaluation (default: 16).
-- `--output_path`: Path to save the quantized model and parameters.
+- `--frac_salient_weights`: Fraction of salient weights to preserve during quantization (e.g., `0.01` for preserving 1% of weights).
+- `--plot_name`: Name for the output plot (e.g., `opt-2.7b`). Plot saved in the `./plots/` directory.
+- `--model_path`: Path to the pretrained model (e.g., `./models/opt-2.7b`). Model should be pre-downloaded.
+- `--eval_ds_path`: Path to the evaluation dataset (e.g., `./datasets/wikitext-2`). Dataset should be pre-downloaded.
+- `--calib_ds_path`: Path to the calibration dataset (e.g., `./datasets/pile-val-backup`). Dataset should also be pre-downloaded.
