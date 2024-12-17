@@ -9,7 +9,7 @@ The fraction of salient weight channels preserved is kept at a fixed default val
 
 We aim to understand how quantization of the activations affects quantization error. Here, the fraction of activation channels (corresponding to salient weights) that are preserved is varied across the range [0.1,0.2,...,0.9].
 
-A push-the-button script is included below for ease of use. Note that the SLURM environment uses a slightly different workflow (as shown in the demo).
+A push-the-button script is included below for ease of use. Note that the SLURM environment uses a slightly different workflow (as shown in the demo). Compute nodes are typically offline in SLURM workflows, so datasets and models are assumed to be downloaded prior to scheduling.
 
 (Lab 4 of 6.5940 proved to be especially helpful and useful here. Special thanks to MIT SuperCloud and the 6.5940 course staff for making this project a possibility.)
 
