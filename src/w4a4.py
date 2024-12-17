@@ -53,8 +53,6 @@ def pseudo_quantize_model_salient_weight_fp16(
 
             # find <frac_salient*100>% of the salient weight channels via importance
             num_salient_channels = int(frac_salient*m.weight.shape[1])
-            if num_salient_channels == 0: # skip quantization if not needed
-                continue
             _, salient_channels = torch.topk(importance, num_salient_channels)
             assert salient_channels.dim() == 1
 
@@ -72,8 +70,6 @@ def register_pseudo_quant_act_hooks_fp16(
 
         # find <frac_salient*100>% of the salient activation channels via importance
         num_salient_channels = int(frac_salient*x.shape[-1])
-        if num_salient_channels == 0: # skip quantization if not needed
-            return
         _, salient_channels = torch.topk(importance, num_salient_channels)
         assert salient_channels.dim() == 1
 
